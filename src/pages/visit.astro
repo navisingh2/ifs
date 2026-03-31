@@ -1,0 +1,369 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Visit & Contact" activePage="visit">
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <p class="section-label">Visit & Contact</p>
+    <h1>Come Say <em>Hello</em></h1>
+    <p class="subtitle">We're on Walnut Street in University City. Stop by for spices, samosas, or just to browse.</p>
+  </div>
+
+  <div class="divider"><div class="divider-line"><span>Find Us</span></div></div>
+
+  <!-- VISIT INFO + MAP -->
+  <section class="visit-section">
+    <div class="visit-info">
+      <h2>Hours & Location</h2>
+
+      <div class="info-block">
+        <h3>Address</h3>
+        <p>4203 Walnut Street<br>Philadelphia, PA 19104</p>
+      </div>
+
+      <div class="info-block">
+        <h3>Phone</h3>
+        <a href="tel:2152224480">(215) 222-4480</a>
+      </div>
+
+      <div class="info-block">
+        <h3>Hours</h3>
+        <div class="hours-grid">
+          <span class="day">Monday</span><span class="time">10:30 AM – 8:00 PM</span>
+          <span class="day">Tuesday</span><span class="closed">Closed</span>
+          <span class="day">Wednesday</span><span class="time">10:30 AM – 8:00 PM</span>
+          <span class="day">Thursday</span><span class="time">10:30 AM – 8:00 PM</span>
+          <span class="day">Friday</span><span class="time">10:30 AM – 8:00 PM</span>
+          <span class="day">Saturday</span><span class="time">10:30 AM – 8:00 PM</span>
+          <span class="day">Sunday</span><span class="time">10:30 AM – 8:00 PM</span>
+        </div>
+      </div>
+
+      <div class="info-block">
+        <h3>Parking</h3>
+        <p>Small lot directly in front of the store, plus street parking available on Walnut Street.</p>
+      </div>
+    </div>
+
+    <div class="visit-map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3058.8!2d-75.2115!3d39.9545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c6c65b1d2aaaab%3A0x7b8e2b8a8b8b8b8b!2s4203+Walnut+St%2C+Philadelphia%2C+PA+19104!5e0!3m2!1sen!2sus!4v1"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </section>
+
+  <!-- CONTACT FORM -->
+    <section class="contact-section" id="contact">
+    <div class="contact-box">
+      <div class="contact-text">
+        <p class="section-label light">Get in Touch</p>
+        <h2>Send Us a Message</h2>
+        <p>Have a question about our products, want to place a bulk order, or just want to say hello? Fill out the form and we'll get back to you.</p>
+        <p>For catering and bulk orders, calling is usually the fastest way to get things sorted.</p>
+        <a href="tel:2152224480" class="phone-highlight">
+          📞 (215) 222-4480
+        </a>
+      </div>
+
+      <form class="contact-form" id="contactForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@email.com" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <select id="subject" name="subject">
+            <option value="general">General Inquiry</option>
+            <option value="catering">Catering / Bulk Order</option>
+            <option value="products">Product Question</option>
+            <option value="feedback">Feedback</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="How can we help?" required></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Send Message →</button>
+
+        <p class="form-note">We typically respond within 1–2 business days. For urgent requests, please call us directly.</p>
+      </form>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  document.getElementById('contactForm')?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const btn = (e.target as HTMLFormElement).querySelector('.submit-btn') as HTMLButtonElement;
+    btn.textContent = 'Message Sent ✓';
+    btn.style.background = '#2D5016';
+    btn.style.color = '#FDF6EC';
+    btn.disabled = true;
+
+    setTimeout(() => {
+      btn.textContent = 'Send Message →';
+      btn.style.background = '';
+      btn.style.color = '';
+      btn.disabled = false;
+      (e.target as HTMLFormElement).reset();
+    }, 3000);
+  });
+</script>
+
+<style>
+  /* VISIT SECTION */
+  .visit-section {
+    padding: 4rem 3rem 5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .visit-info h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--dark);
+    letter-spacing: -0.02em;
+    margin-bottom: 2.5rem;
+    line-height: 1.1;
+  }
+
+  .info-block {
+    margin-bottom: 2.2rem;
+  }
+
+  .info-block h3 {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.6rem;
+  }
+
+  .info-block p,
+  .info-block a {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--dark);
+  }
+
+  .info-block a {
+    text-decoration: none;
+    border-bottom: 1px solid var(--saffron);
+    transition: color 0.3s;
+  }
+
+  .info-block a:hover { color: var(--chili); }
+
+  .hours-grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.4rem 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .hours-grid .day {
+    font-weight: 600;
+    color: var(--dark);
+  }
+
+  .hours-grid .time { color: var(--text-muted); }
+  .hours-grid .closed { color: var(--chili); font-weight: 600; }
+
+  .visit-map {
+    aspect-ratio: 1;
+    background: var(--border-light);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    border: 1px solid var(--border-light);
+    position: sticky;
+    top: 8rem;
+  }
+
+  .visit-map iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  /* CONTACT SECTION */
+.contact-section {
+  padding: 1rem 3rem 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  scroll-margin-top: 5rem;
+}
+
+.contact-box {
+  background: #3D2215;
+  color: var(--cream);
+  border-radius: 1rem;
+  padding: 4rem;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 4rem;
+  align-items: start;
+  position: relative;
+  overflow: hidden;
+}
+
+  .contact-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.2rem;
+    line-height: 1.1;
+  }
+
+  .contact-text p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: rgba(253, 246, 236, 0.6);
+    margin-bottom: 1rem;
+  }
+
+.phone-highlight {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1rem;
+  padding: 0.8rem 1.2rem;
+  background: rgba(0,0,0,0.15);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 0.5rem;
+  color: var(--cream);
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.phone-highlight:hover {
+  background: rgba(0,0,0,0.25);
+}
+
+  /* FORM */
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .form-group label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(253, 246, 236, 0.45);
+  }
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  padding: 0.9rem 1rem;
+  background: rgba(0,0,0,0.15);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 0.4rem;
+  color: var(--cream);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  transition: border-color 0.3s;
+  outline: none;
+}
+
+  .form-group input::placeholder,
+  .form-group textarea::placeholder {
+    color: rgba(253, 246, 236, 0.3);
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus {
+    border-color: var(--saffron);
+  }
+
+  .form-group textarea {
+    min-height: 140px;
+    resize: vertical;
+  }
+
+  .form-group select {
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23FAF4EB' opacity='0.4' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+  }
+
+  .form-group select option {
+    background: var(--dark);
+    color: var(--cream);
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+  }
+
+  .submit-btn {
+    padding: 1rem 2rem;
+    background: var(--saffron);
+    color: var(--dark);
+    border: none;
+    border-radius: 0.4rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 0.5rem;
+  }
+
+  .submit-btn:hover {
+    background: var(--turmeric);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(232, 168, 56, 0.3);
+  }
+
+  .form-note {
+    font-size: 0.78rem;
+    color: rgba(253, 246, 236, 0.35);
+    line-height: 1.5;
+  }
+
+@media (max-width: 768px) {
+  .contact-section { padding: 2rem 1.5rem 3rem; }
+  .contact-box { grid-template-columns: 1fr; gap: 2.5rem; padding: 2.5rem 1.5rem; }
+  .form-row { grid-template-columns: 1fr; }
+}
+</style>

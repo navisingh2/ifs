@@ -1,0 +1,83 @@
+---
+interface Props {
+  title: string;
+  activePage?: string;
+}
+
+const { title, activePage = '' } = Astro.props;
+import '../styles/global.css';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="International Foods & Spices — A family-owned Indian & South Asian grocery in University City, Philadelphia. Home to Philly's best samosas since 1987." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <title>{title} — International Foods & Spices</title>
+  </head>
+  <body>
+
+    <!-- NAV -->
+    <nav>
+      <a href="/" class="logo">International Foods <span>&</span> Spices</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/" class={activePage === 'home' ? 'active' : ''}>Home</a></li>
+        <li><a href="/about" class={activePage === 'about' ? 'active' : ''}>About</a></li>
+        <li><a href="/products" class={activePage === 'products' ? 'active' : ''}>What We Carry</a></li>
+        <li><a href="/catering" class={activePage === 'catering' ? 'active' : ''}>Catering</a></li>
+        <li><a href="/visit" class={activePage === 'visit' ? 'active' : ''}>Visit & Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- PAGE CONTENT -->
+    <slot />
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-main">
+        <div class="footer-brand-col">
+          <div class="footer-logo">International Foods <span>&</span> Spices</div>
+          <p class="footer-desc">A family-owned Indian & South Asian grocery in University City, Philadelphia. Serving the community since 1987.</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/internationalfoodsandspices/" target="_blank">Instagram</a>
+            <a href="https://www.facebook.com/intlfoodsandspices/" target="_blank">Facebook</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/products">What We Carry</a></li>
+            <li><a href="/catering">Catering</a></li>
+            <li><a href="/visit">Visit & Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Find Us</h4>
+            <address class="footer-address">
+            <strong><a href="https://maps.google.com/?q=4203+Walnut+Street+Philadelphia+PA+19104" target="_blank">4203 Walnut Street<br />Philadelphia, PA 19104</a></strong>
+            <br></br>
+            <strong><a href="tel:2152224480">(215) 222-4480</a></strong><br /><br />
+            Open Daily 10:30am – 8pm<br />
+            Closed Tuesdays
+            </address>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; {new Date().getFullYear()} International Foods & Spices. All rights reserved.
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('navToggle')?.addEventListener('click', () => {
+        document.getElementById('navLinks')?.classList.toggle('open');
+      });
+    </script>
+  </body>
+</html>
