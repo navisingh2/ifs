@@ -18,10 +18,8 @@ import Layout from '../layouts/Layout.astro';
         <p>Whether you need 50 samosas for a birthday party or trays of curry for a campus event, we've got you covered. <strong>Everything is made fresh</strong> in our kitchen — the same quality you get at our counter, scaled up for your occasion.</p>
         <p>We've been feeding University City for over 35 years. Let us help you feed your guests.</p>
       </div>
-      <div class="catering-photo photo-placeholder">
-        <div class="photo-placeholder-inner">
-          <span class="icon">📷</span>
-          Catering spread photo
+      <div class="catering-photo">
+        <img src="/images/catering.jpg" alt="Catering spread photo"/>
         </div>
       </div>
     </div>
@@ -135,10 +133,18 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .catering-photo {
-    aspect-ratio: 1;
-    background: var(--border-light);
-    border-radius: 0.5rem;
-  }
+  aspect-ratio: 1;
+  background: var(--border-light);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.catering-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
 
   /* OFFERINGS */
   .catering-offerings {
