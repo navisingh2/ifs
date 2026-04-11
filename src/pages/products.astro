@@ -10,6 +10,26 @@ import Layout from '../layouts/Layout.astro';
     <p class="subtitle">From ready-to-eat hot food to the specialty ingredients that make your cooking unforgettable.</p>
   </div>
 
+  <!-- Delivery Strip -->
+<div class="delivery-strip">
+  
+    href="https://www.ubereats.com/store/international-groceries-4203-walnut-st/Qt-hin37VFSER2nNLpXjMw"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="delivery-strip-btn"
+  >
+    Order on Uber Eats →
+  </a>
+  
+    href="https://postmates.com/store/international-groceries-4203-walnut-st/Qt-hin37VFSER2nNLpXjMw"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="delivery-strip-btn"
+  >
+    Order on Postmates →
+  </a>
+</div>
+
   <!-- ============================== -->
   <!-- HOT FOOD BAR -->
   <!-- ============================== -->
@@ -322,6 +342,35 @@ import Layout from '../layouts/Layout.astro';
 </script>
 
 <style>
+  /*Delivery Strip Green Banner Section*/
+.delivery-strip {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem var(--page-padding, 1.5rem);
+    background-color: #FAF4EB;
+    border-top: 1px solid #E8DDD0;
+    border-bottom: 1px solid #E8DDD0;
+  }
+
+  .delivery-strip-btn {
+    display: block;
+    flex: 1;
+    background-color: #2D5016;
+    color: #fff;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    padding: 0.85rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+  }
+
+  .delivery-strip-btn:hover {
+    background-color: #3a6b1e;
+  }
+
   /* ============================== */
   /* HOT BAR */
   /* ============================== */
@@ -626,5 +675,9 @@ import Layout from '../layouts/Layout.astro';
     .carousel-btn { display: none; }
     .grocery-card { flex: 0 0 260px; }
     .brands-note { padding: 2rem 1.5rem 3rem; }
+
+    .delivery-strip {
+      flex-direction: column;
+    }
   }
 </style>
