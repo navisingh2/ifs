@@ -123,11 +123,12 @@ import Layout from '../layouts/Layout.astro';
  /* FLOATING DELIVERY WIDGET */
 .delivery-float {
   position: fixed;
-  bottom: 1.5rem;
-  right: 1.5rem;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0;
   z-index: 1000;
 }
 
@@ -135,24 +136,25 @@ import Layout from '../layouts/Layout.astro';
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  padding: 0.55rem 1.1rem;
-  border-radius: 0.35rem;
+  padding: 0.6rem 1rem;
   font-family: 'DM Sans', sans-serif;
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   font-weight: 700;
   text-decoration: none;
+  writing-mode: vertical-rl;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  box-shadow: -4px 0 16px rgba(0, 0, 0, 0.12);
 }
 
 .float-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+  transform: translateX(-4px);
+  box-shadow: -6px 0 24px rgba(0, 0, 0, 0.2);
 }
 
 .float-btn.uber {
   background: #fff;
   color: #1a1a1a;
+  border-radius: 0.35rem 0 0 0;
 }
 
 .float-btn .uber-dot {
@@ -166,6 +168,7 @@ import Layout from '../layouts/Layout.astro';
 .float-btn.postmates {
   background: #FF5F00;
   color: #fff;
+  border-radius: 0 0 0 0.35rem;
 }
 
 .float-btn .postmates-icon {
@@ -600,14 +603,27 @@ import Layout from '../layouts/Layout.astro';
     .catering-cta-section { padding: 3rem 1.5rem; }
     .catering-cta-box { grid-template-columns: 1fr; padding: 3rem 2rem; }
 
-      .delivery-float {
-      bottom: 1rem;
-      right: 1rem;
-    }
+    .delivery-float {
+        top: auto;
+        bottom: 0;
+        right: 0;
+        transform: none;
+        flex-direction: row;
+        width: 100%;
+      }
 
-    .float-btn {
-      padding: 0.5rem 0.9rem;
-      font-size: 0.72rem;
-    }
+      .float-btn {
+        writing-mode: horizontal-tb;
+        flex: 1;
+        justify-content: center;
+        border-radius: 0;
+        padding: 0.6rem 1rem;
+        font-size: 0.75rem;
+        box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.12);
+      }
+
+      .float-btn:hover {
+        transform: none;
+      }
   }
 </style>
