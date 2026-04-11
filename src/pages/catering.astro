@@ -98,15 +98,22 @@ import Layout from '../layouts/Layout.astro';
 <style>
   /* Mobile Vieew */
   @media (max-width: 768px) {
-    .offerings-grid {
-        gap: 1rem;
-    }
-
-    .offering-card {
-        min-width: 240px;
-        flex: 0 0 240px;
-    }
+  .catering-intro { padding: 3rem 1.5rem; }
+  .catering-intro-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .catering-offerings { padding: 4rem 1.5rem; }
+  .offerings-grid {
+    gap: 1rem;
+    overflow-x: auto;
   }
+  .offering-card {
+    min-width: 220px;
+    flex: 0 0 220px;
+  }
+  .how-it-works { padding: 4rem 1.5rem; }
+  .how-steps { grid-template-columns: 1fr; gap: 2rem; }
+  .catering-cta-block { padding: 0 1.5rem 4rem; }
+  .cta-box { padding: 3rem 2rem; }
+}
 
   /* INTRO */
   .catering-intro {
