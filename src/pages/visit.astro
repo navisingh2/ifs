@@ -142,50 +142,6 @@ import Layout from '../layouts/Layout.astro';
 </script>
 
 <style>
-
-.visit-map {
-  width: 100%;
-  min-height: 400px; /* Ensures visibility */
-  border-radius: 0.75rem;
-  overflow: hidden;
-  border: 1px solid var(--border-light);
-  position: sticky;
-  top: 8rem;
-}
-
-  .hours-grid {
-    grid-template-columns: 120px 1fr;
-    font-size: 0.88rem;
-  }
-
-  .hours-grid .time {
-    white-space: nowrap;
-  }
-
-  .contact-section {
-    padding: 2rem 1.5rem 3rem;
-  }
-
-  .contact-box {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-    padding: 2.5rem 1.5rem;
-  }
-
-  .form-row {
-    grid-template-columns: 1fr;
-  }
-
-  .visit-info h2 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .info-block p,
-   .info-block a {
-     font-size: 1rem;
-  }
-}
   
   /* VISIT SECTION */
   .visit-section {
@@ -423,10 +379,9 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .visit-map {
-    position: static;     /* Disable sticky behavior on mobile */
-    width: 100%;
-    height: 300px;        /* Ensures the map is clearly visible */
-    order: -1;            /* Optional: shows the map above the info */
+    position: static;   /* Disable sticky on mobile */
+    height: 300px;      /* Ensure visibility */
+    order: -1;          /* Optional: move map above info */
   }
 
   .visit-info h2 {
@@ -446,7 +401,7 @@ import Layout from '../layouts/Layout.astro';
 
   .hours-grid .time,
   .hours-grid .closed {
-    white-space: normal;  /* Allows wrapping on smaller screens */
+    white-space: normal;
   }
 
   /* CONTACT SECTION */
