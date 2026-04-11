@@ -96,6 +96,18 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <style>
+  /* Mobile Vieew */
+  @media (max-width: 768px) {
+    .offerings-grid {
+        gap: 1rem;
+    }
+
+    .offering-card {
+        min-width: 240px;
+        flex: 0 0 240px;
+    }
+  }
+
   /* INTRO */
   .catering-intro {
     padding: 2rem 3rem 3rem;
