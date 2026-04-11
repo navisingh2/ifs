@@ -12,10 +12,17 @@ import Layout from '../layouts/Layout.astro';
 
 <!-- Delivery Strip -->
 <div class="delivery-strip">
-  
-<a href="https://www.ubereats.com/store/international-groceries-4203-walnut-st/Qt-hin37VFSER2nNLpXjMw" target="_blank" rel="noopener noreferrer" class="delivery-strip-btn">Order on Uber Eats →</a>
-
-<a href="https://postmates.com/store/international-groceries-4203-walnut-st/Qt-hin37VFSER2nNLpXjMw" target="_blank" rel="noopener noreferrer" class="delivery-strip-btn">Order on Postmates →</a>
+  <div class="delivery-strip-inner">
+    <p class="delivery-text"><strong>Shop from home.</strong> Order our full grocery selection for delivery.</p>
+    <div class="delivery-buttons">
+      <a href="https://www.ubereats.com/store/international-groceries-4203-walnut-st/Qt-hin37VFSER2nNLpXjMw" target="_blank" rel="noopener noreferrer" class="delivery-btn uber">
+        <span class="uber-dot"></span> Uber Eats
+      </a>
+      <a href="https://postmates.com/store/international-groceries-4203-walnut-st/Qt-hin37VFSER2nNLpXjMw" target="_blank" rel="noopener noreferrer" class="delivery-btn postmates">
+        <span class="postmates-icon">⊕</span> Postmates
+      </a>
+    </div>
+  </div>
 </div>
 
   <!-- ============================== -->
@@ -330,31 +337,82 @@ import Layout from '../layouts/Layout.astro';
 </script>
 
 <style>
+  
+  /* Delivery Section at Top */
   .delivery-strip {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  padding: 1.5rem 3rem;
+  padding: 0 3rem;
+  margin-top: 1rem;
 }
 
-.delivery-strip-btn {
-  display: block;
-  width: 100%;
+.delivery-strip-inner {
+  max-width: 1200px;
+  margin: 0 auto;
   background: #2D5016;
+  border-radius: 0.5rem;
+  padding: 1.25rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.delivery-text {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.delivery-text strong {
   color: #fff;
+  font-weight: 700;
+}
+
+.delivery-buttons {
+  display: flex;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.delivery-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.4rem;
+  border-radius: 0.35rem;
   font-family: 'DM Sans', sans-serif;
   font-size: 0.88rem;
-  font-weight: 600;
-  text-align: left;
+  font-weight: 700;
   text-decoration: none;
-  padding: 0.9rem 1.8rem;
-  border-radius: 0.4rem;
-  letter-spacing: 0.02em;
-  transition: background 0.2s ease;
+  transition: opacity 0.2s ease;
 }
 
-.delivery-strip-btn:hover {
-  background: #3a6b1e;
+.delivery-btn:hover {
+  opacity: 0.9;
+}
+
+.delivery-btn.uber {
+  background: #fff;
+  color: #1a1a1a;
+}
+
+.uber-dot {
+  width: 10px;
+  height: 10px;
+  background: #1a1a1a;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.delivery-btn.postmates {
+  background: #FF5F00;
+  color: #fff;
+}
+
+.postmates-icon {
+  font-size: 1.1rem;
+  font-weight: 700;
 }
 
   /* ============================== */
@@ -663,7 +721,26 @@ import Layout from '../layouts/Layout.astro';
     .brands-note { padding: 2rem 1.5rem 3rem; }
 
     .delivery-strip {
-    padding: 1.5rem;
+    padding: 0 1.5rem;
+    margin-top: 0.75rem;
+  }
+
+    .delivery-strip-inner {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1.25rem 1.5rem;
+      gap: 1rem;
+    }
+
+    .delivery-buttons {
+      width: 100%;
+    }
+
+    .delivery-btn {
+      flex: 1;
+      justify-content: center;
+      padding: 0.6rem 1rem;
+      font-size: 0.82rem;
     }
   }
 </style>
