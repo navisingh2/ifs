@@ -106,9 +106,73 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
+  <!-- Floating Delivery Widget -->
+<div class="delivery-float">
+  <a href="https://www.ubereats.com/store/international-groceries-4203-walnut-st/Qt-hin37VFSER2nNLpXjMw" target="_blank" rel="noopener noreferrer" class="float-btn uber">
+    <span class="uber-dot"></span> Uber Eats
+  </a>
+  <a href="https://postmates.com/store/international-groceries-4203-walnut-st/Qt-hin37VFSER2nNLpXjMw" target="_blank" rel="noopener noreferrer" class="float-btn postmates">
+    <span class="postmates-icon">⊕</span> Postmates
+  </a>
+</div>
+
 </Layout>
 
 <style>
+
+ /* FLOATING DELIVERY WIDGET */
+.delivery-float {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 1000;
+}
+
+.float-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.55rem 1.1rem;
+  border-radius: 0.35rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.float-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+}
+
+.float-btn.uber {
+  background: #fff;
+  color: #1a1a1a;
+}
+
+.float-btn .uber-dot {
+  width: 8px;
+  height: 8px;
+  background: #1a1a1a;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.float-btn.postmates {
+  background: #FF5F00;
+  color: #fff;
+}
+
+.float-btn .postmates-icon {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
 	.samosa-photo img {
 	width: 100%;
 	height: 100%;
@@ -535,5 +599,15 @@ import Layout from '../layouts/Layout.astro';
     .products-preview .section-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
     .catering-cta-section { padding: 3rem 1.5rem; }
     .catering-cta-box { grid-template-columns: 1fr; padding: 3rem 2rem; }
+
+      .delivery-float {
+      bottom: 1rem;
+      right: 1rem;
+    }
+
+    .float-btn {
+      padding: 0.5rem 0.9rem;
+      font-size: 0.72rem;
+    }
   }
 </style>
