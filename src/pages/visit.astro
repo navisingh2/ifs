@@ -143,18 +143,15 @@ import Layout from '../layouts/Layout.astro';
 
 <style>
 
-  /* Mobile View*/
-@media (max-width: 768px) {
-  .visit-section {
-    grid-template-columns: 1fr;
-    padding: 3rem 1.5rem;
-  }
-
-  .visit-map {
-    position: static;
-    aspect-ratio: 16/9;
-    order: -1;
-  }
+.visit-map {
+  width: 100%;
+  min-height: 400px; /* Ensures visibility */
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border: 1px solid var(--border-light);
+  position: sticky;
+  top: 8rem;
+}
 
   .hours-grid {
     grid-template-columns: 120px 1fr;
@@ -254,21 +251,12 @@ import Layout from '../layouts/Layout.astro';
   .hours-grid .time { color: var(--text-muted); }
   .hours-grid .closed { color: var(--chili); font-weight: 600; }
 
-  .visit-map {
-    aspect-ratio: 1;
-    background: var(--border-light);
-    border-radius: 0.75rem;
-    overflow: hidden;
-    border: 1px solid var(--border-light);
-    position: sticky;
-    top: 8rem;
-  }
-
-  .visit-map iframe {
-    width: 100%;
-    height: 100%;
-    border: 0;
-  }
+.visit-map iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
 
   /* CONTACT SECTION */
 .contact-section {
@@ -427,6 +415,55 @@ import Layout from '../layouts/Layout.astro';
   }
 
 @media (max-width: 768px) {
+  /* VISIT SECTION */
+  .visit-section {
+    grid-template-columns: 1fr;
+    padding: 3rem 1.5rem;
+    gap: 2rem;
+  }
+
+  .visit-map {
+    position: static;     /* Disable sticky behavior on mobile */
+    width: 100%;
+    height: 300px;        /* Ensures the map is clearly visible */
+    order: -1;            /* Optional: shows the map above the info */
+  }
+
+  .visit-info h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .info-block p,
+  .info-block a {
+    font-size: 1rem;
+  }
+
+  .hours-grid {
+    grid-template-columns: 110px 1fr;
+    font-size: 0.9rem;
+  }
+
+  .hours-grid .time,
+  .hours-grid .closed {
+    white-space: normal;  /* Allows wrapping on smaller screens */
+  }
+
+  /* CONTACT SECTION */
+  .contact-section {
+    padding: 2rem 1.5rem 3rem;
+  }
+
+  .contact-box {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding: 2.5rem 1.5rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+} (max-width: 768px) {
   .contact-section { padding: 2rem 1.5rem 3rem; }
   .contact-box { grid-template-columns: 1fr; gap: 2.5rem; padding: 2.5rem 1.5rem; }
   .form-row { grid-template-columns: 1fr; }

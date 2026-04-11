@@ -96,25 +96,6 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <style>
-  /* Mobile Vieew */
-  @media (max-width: 768px) {
-  .catering-intro { padding: 3rem 1.5rem; }
-  .catering-intro-grid { grid-template-columns: 1fr; gap: 2rem; }
-  .catering-offerings { padding: 4rem 1.5rem; }
-  .offerings-grid {
-    gap: 1rem;
-    overflow-x: auto;
-  }
-  .offering-card {
-    min-width: 220px;
-    flex: 0 0 220px;
-  }
-  .how-it-works { padding: 4rem 1.5rem; }
-  .how-steps { grid-template-columns: 1fr; gap: 2rem; }
-  .catering-cta-block { padding: 0 1.5rem 4rem; }
-  .cta-box { padding: 3rem 2rem; }
-}
-
   /* INTRO */
   .catering-intro {
     padding: 2rem 3rem 3rem;
@@ -401,14 +382,61 @@ import Layout from '../layouts/Layout.astro';
     box-shadow: 0 8px 24px rgba(0,0,0,0.2);
   }
 
-  @media (max-width: 768px) {
-    .catering-intro { padding: 3rem 1.5rem; }
-    .catering-intro-grid { grid-template-columns: 1fr; gap: 2rem; }
-    .catering-offerings { padding: 4rem 1.5rem; }
-    .offerings-grid { grid-template-columns: 1fr; }
-    .how-it-works { padding: 4rem 1.5rem; }
-    .how-steps { grid-template-columns: 1fr; gap: 2rem; }
-    .catering-cta-block { padding: 0 1.5rem 4rem; }
-    .cta-box { padding: 3rem 2rem; }
+@media (max-width: 768px) {
+  /* INTRO */
+  .catering-intro {
+    padding: 3rem 1.5rem;
   }
+
+  .catering-intro-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  /* OFFERINGS */
+  .catering-offerings {
+    padding: 4rem 1.5rem;
+  }
+
+  .offerings-grid {
+    display: grid;              /* Override desktop flex */
+    grid-template-columns: 1fr; /* Stack cards vertically */
+    gap: 1.5rem;
+    overflow: visible;          /* Remove horizontal scrolling */
+  }
+
+  .offering-card {
+    min-width: unset;
+    flex: unset;
+  }
+
+  /* HOW IT WORKS */
+  .how-it-works {
+    padding: 4rem 1.5rem;
+  }
+
+  .how-steps {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  /* CTA */
+  .catering-cta-block {
+    padding: 0 1.5rem 4rem;
+  }
+
+  .cta-box {
+    padding: 3rem 2rem;
+  }
+
+  .btn-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn {
+    justify-content: center;
+    width: 100%;
+  }
+}
 </style>
