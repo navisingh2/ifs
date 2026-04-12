@@ -22,16 +22,56 @@ import '../styles/global.css';
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content={`International Foods & Spices`} />    
-    <meta property="og:description" content="A family-owned Indian & South Asian grocery in University City, Philadelphia. Home to Philly's best samosas since 1982." />
-    <meta property="og:image" content="https://ifs-five.vercel.app/images/og-image.jpg" />
-    <meta property="og:url" content="https://ifs-five.vercel.app" />
+    <meta property="og:description" content="A family-owned Indian & South Asian grocery in University City, Philadelphia. Home to Philly's best samosas since 1987." />
+    <meta property="og:image" content="https://www.shopifs.com/images/og-image.jpg" />
+    <meta property="og:url" content="https://www.shopifs.com" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={`${title} — International Foods & Spices`} />   
     <meta name="twitter:description" content="A family-owned Indian & South Asian grocery in University City, Philadelphia. Home to Philly's best samosas since 1982." />
-    <meta name="twitter:image" content="https://ifs-five.vercel.app/images/og-image.jpg" />
+    <meta name="twitter:image" content="https://www.shopifs.com/images/og-image.jpg" />
   
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "GroceryStore",
+    "name": "International Foods & Spices",
+    "description": "A family-owned Indian & South Asian grocery in University City, Philadelphia. Serving the community since 1987.",
+    "url": "https://www.shopifs.com",
+    "telephone": "(215) 222-4480",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "4203 Walnut Street",
+      "addressLocality": "Philadelphia",
+      "addressRegion": "PA",
+      "postalCode": "19104",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 39.9549,
+      "longitude": -75.2069
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "10:30",
+        "closes": "20:00"
+      }
+    ],
+    "priceRange": "$",
+    "servesCuisine": "Indian, South Asian",
+    "image": "https://www.shopifs.com/images/og-image.jpg",
+    "sameAs": [
+      "https://www.instagram.com/internationalfoodsandspices/",
+      "https://www.facebook.com/intlfoodsandspices/"
+    ]
+  }
+  
+</script>
+
 </head>
   <body>
 
