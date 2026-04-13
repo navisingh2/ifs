@@ -58,7 +58,7 @@ import Layout from '../layouts/Layout.astro';
               <span class="hotbar-item">Eggplant</span>
               <span class="hotbar-item">Rice</span>
             </div>
-                <p class="rotating-note">Selection varies daily based on availability</p>
+            <p class="rotating-note">Selection varies daily based on availability</p>
           </div>
           <div class="hotbar-menu-group">
             <h3>Fresh Chutneys</h3>
@@ -67,14 +67,13 @@ import Layout from '../layouts/Layout.astro';
               <span class="hotbar-item">Tamarind Chutney</span>
             </div>
           </div>
-
-          <a href="/hot-food-menu.pdf" target="_blank" class="hotbar-menu-btn">View Full Menu & Prices →</a>
-        </div>
-
         </div>
       </div>
-      <div class="hotbar-photo">
-        <img src="/images/products/hotbar.jpeg" alt="Variety of fresh hot food available to-go at International Foods & Spices"/>
+      <div class="hotbar-right">
+        <div class="hotbar-photo">
+          <img src="/images/products/hotbar.jpeg" alt="Variety of fresh hot food available to-go at International Foods & Spices"/>
+        </div>
+        <a href="/hot-food-menu.pdf" target="_blank" class="hotbar-menu-btn">View Full Menu & Prices →</a>
       </div>
     </div>
   </section>
@@ -341,10 +340,9 @@ import Layout from '../layouts/Layout.astro';
 </script>
 
 <style>
-
-  .hotbar-menu-btn {
+  
+.hotbar-menu-btn {
   display: inline-block;
-  margin-top: 1.5rem;
   padding: 0.75rem 1.5rem;
   background-color: #C23616;
   color: #FDF6EC;
@@ -353,6 +351,7 @@ import Layout from '../layouts/Layout.astro';
   font-size: 0.95rem;
   text-decoration: none;
   border-radius: 4px;
+  text-align: center;
   transition: background-color 0.2s ease;
 }
 
@@ -531,10 +530,17 @@ import Layout from '../layouts/Layout.astro';
     letter-spacing: 0.02em;
   }
 
+  .hotbar-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  align-self: center;
+  }
+
   .hotbar-photo {
     border-radius: 0.5rem;
     overflow: hidden;
-    align-self: center;
   }
 
   .hotbar-photo img {
