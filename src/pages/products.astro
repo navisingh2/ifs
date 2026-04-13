@@ -67,6 +67,18 @@ import Layout from '../layouts/Layout.astro';
               <span class="hotbar-item">Tamarind Chutney</span>
             </div>
           </div>
+
+          <div class="hotbar-menu-group">
+            <h3>Fresh Chutneys</h3>
+            <div class="hotbar-items">
+              <span class="hotbar-item">Fresh Green Chutney</span>
+              <span class="hotbar-item">Tamarind Chutney</span>
+            </div>
+          </div>
+
+          <a href="/hot-food-menu.pdf" target="_blank" class="hotbar-menu-btn">View Full Menu & Prices →</a>
+        </div>
+
         </div>
       </div>
       <div class="hotbar-photo">
@@ -337,6 +349,24 @@ import Layout from '../layouts/Layout.astro';
 </script>
 
 <style>
+
+  .hotbar-menu-btn {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #C23616;
+  color: #FDF6EC;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.hotbar-menu-btn:hover {
+  background-color: #A02D13;
+}
   
   /* Delivery Section at Top */
   .delivery-strip {
