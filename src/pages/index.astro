@@ -12,12 +12,10 @@ import Layout from '../layouts/Layout.astro';
     <div class="hero-details">
       <div class="hero-detail-item">
         <span class="hero-detail-label">Location</span>
-        <span class="hero-detail-value">4203 Walnut St<br>Philadelphia, PA 19104</span>
-      </div>
+        <a href="https://maps.google.com/?q=4203+Walnut+St+Philadelphia+PA+19104" target="_blank" rel="noopener noreferrer" class="hero-detail-value hero-detail-link">4203 Walnut St<br>Philadelphia, PA 19104</a>      </div>
       <div class="hero-detail-item">
         <span class="hero-detail-label">Phone</span>
-        <span class="hero-detail-value">(215) 222-4480</span>
-      </div>
+        <a href="tel:+12152224480" class="hero-detail-value hero-detail-link">(215) 222-4480</a>      </div>
       <div class="hero-detail-item">
         <span class="hero-detail-label">Open Daily</span>
         <span class="hero-detail-value">10:30am – 8pm</span>
@@ -289,6 +287,16 @@ import Layout from '../layouts/Layout.astro';
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--text-muted);
+  }
+
+  .hero-detail-link {
+    text-decoration: none;
+    color: var(--dark);
+    transition: color 0.2s ease;
+  }
+
+  .hero-detail-link:hover {
+    color: var(--chili);
   }
 
   .hero-detail-value {
