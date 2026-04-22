@@ -12,11 +12,11 @@ import Layout from '../layouts/Layout.astro';
     <div class="hero-details">
       <div class="hero-detail-item">
         <span class="hero-detail-label">Location</span>
-        <span class="hero-detail-value">4203 Walnut St<br>Philadelphia, PA 19104</span>
+        <a href="https://maps.app.goo.gl/aNVmfQDGnJu19tgi7" target="_blank" rel="noopener noreferrer" class="hero-detail-value hero-detail-link">4203 Walnut St<br>Philadelphia, PA 19104</a>
       </div>
       <div class="hero-detail-item">
         <span class="hero-detail-label">Phone</span>
-        <span class="hero-detail-value">(215) 222-4480</span>
+        <a href="tel:+12152224480" class="hero-detail-value hero-detail-link">(215) 222-4480</a>
       </div>
       <div class="hero-detail-item">
         <span class="hero-detail-label">Open Daily</span>
@@ -182,15 +182,15 @@ import Layout from '../layouts/Layout.astro';
 	border-radius: 0.5rem;
 	}
  
-  .hero {
-    min-height: 92vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 5rem 3rem 4rem;
-    position: relative;
-    overflow: hidden;
-  }
+.hero {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5rem 3rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
 
   .hero::before {
     content: '';
@@ -289,6 +289,16 @@ import Layout from '../layouts/Layout.astro';
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--text-muted);
+  }
+
+  .hero-detail-link {
+  text-decoration: none;
+  color: var(--dark);
+  transition: color 0.2s ease;
+  }
+
+  .hero-detail-link:hover {
+    color: var(--chili);
   }
 
   .hero-detail-value {
